@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on darwin)" generated="20220702 09:40:07.660" rpa="false" schemaversion="3">
+<suite id="s1" name="Checkout" source="/Users/laptop-138/Documents/gitlab repositories/robot-framework-training/Phase 4/test_cases/checkout.robot">
+<test id="s1-t1" name="Scenario 1: Checkout" line="10">
+<kw name="Given user login account">
+<kw name="Normal User | Dashboard" library="common">
+<kw name="SwagLabs | Dashboard" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Open Browser - SwagLabs</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:07.875" endtime="20220702 09:40:07.875"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${site_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220702 09:40:07.875" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20220702 09:40:07.875" endtime="20220702 09:40:11.969"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220702 09:40:11.970" endtime="20220702 09:40:12.095"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 09:40:17.097" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220702 09:40:12.095" endtime="20220702 09:40:17.097"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//*[@id="login-button"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220702 09:40:17.192" level="INFO">Element '//*[@id="login-button"]' is displayed.</msg>
+<status status="PASS" starttime="20220702 09:40:17.097" endtime="20220702 09:40:17.192"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:07.875" endtime="20220702 09:40:17.192"/>
+</kw>
+<kw name="Login as normal user" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login as normal user</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:17.192" endtime="20220702 09:40:17.192"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:17.192" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20220702 09:40:17.192" endtime="20220702 09:40:17.554"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:17.554" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220702 09:40:17.554" endtime="20220702 09:40:17.660"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:17.660" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20220702 09:40:17.660" endtime="20220702 09:40:18.340"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 09:40:21.341" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220702 09:40:18.340" endtime="20220702 09:40:21.342"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Products</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220702 09:40:21.343" endtime="20220702 09:40:21.382"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:17.192" endtime="20220702 09:40:21.382"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:07.874" endtime="20220702 09:40:21.383"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:07.874" endtime="20220702 09:40:21.383"/>
+</kw>
+<kw name="And user will add items to cart">
+<kw name="Add Items To Cart" library="1-add_item_to_cart">
+<kw name="Product 1" library="1-add_item_to_cart">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Get Product Elements</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:21.384" endtime="20220702 09:40:21.384"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${product_elemnt}</var>
+<arg>class=inventory_item</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220702 09:40:21.395" level="INFO">${product_elemnt} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="47cc2836add7bfcd1cdb22a0a8208177", element="7d85eede-615c-4127-a4dc-5f6b2cafb148")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220702 09:40:21.384" endtime="20220702 09:40:21.395"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${el_count}</var>
+<arg>class=inventory_item</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220702 09:40:21.407" level="INFO">${el_count} = 6</msg>
+<status status="PASS" starttime="20220702 09:40:21.395" endtime="20220702 09:40:21.407"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${addtocart}</var>
+<arg>${el_count} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220702 09:40:21.407" level="INFO">${addtocart} = 5</msg>
+<status status="PASS" starttime="20220702 09:40:21.407" endtime="20220702 09:40:21.407"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Web Elements - ${product_elemnt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:21.407" endtime="20220702 09:40:21.407"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Element Count - ${el_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:21.408" endtime="20220702 09:40:21.408"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Random Products</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:21.408" endtime="20220702 09:40:21.408"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_number}</var>
+<arg>random.randint(1,${addtocart})</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220702 09:40:21.409" level="INFO">${random_number} = 4</msg>
+<status status="PASS" starttime="20220702 09:40:21.408" endtime="20220702 09:40:21.409"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${add_to_cart}</var>
+<arg>class=btn_primary</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220702 09:40:21.421" level="INFO">${add_to_cart} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="47cc2836add7bfcd1cdb22a0a8208177", element="9ccfa6de-5e0b-46c5-a614-55fb3bd62b70")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220702 09:40:21.409" endtime="20220702 09:40:21.421"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${el_count_add}</var>
+<arg>class=btn_primary</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220702 09:40:21.434" level="INFO">${el_count_add} = 6</msg>
+<status status="PASS" starttime="20220702 09:40:21.421" endtime="20220702 09:40:21.434"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Element Count - ${el_count_add}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:21.434" endtime="20220702 09:40:21.435"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${random_number}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220702 09:40:21.435" level="INFO">${random_number} = 4</msg>
+<status status="PASS" starttime="20220702 09:40:21.435" endtime="20220702 09:40:21.435"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Add Item To Cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:21.435" endtime="20220702 09:40:21.435"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_to_cart}[${random_number}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:21.436" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="47cc2836add7bfcd1cdb22a0a8208177", element="303d8f6e-14ed-4749-8fb9-f58a28cf97e9")&gt;'.</msg>
+<status status="PASS" starttime="20220702 09:40:21.435" endtime="20220702 09:40:21.491"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${remove_button}</var>
+<arg>class=btn_secondary</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220702 09:40:21.499" level="INFO">${remove_button} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="47cc2836add7bfcd1cdb22a0a8208177", element="709e606d-f479-4c7f-b315-62e6536977e9")&gt;]</msg>
+<status status="PASS" starttime="20220702 09:40:21.491" endtime="20220702 09:40:21.499"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${remove_button_cnt}</var>
+<arg>class=btn_secondary</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220702 09:40:21.504" level="INFO">${remove_button_cnt} = 1</msg>
+<status status="PASS" starttime="20220702 09:40:21.500" endtime="20220702 09:40:21.504"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rev_button_index}</var>
+<arg>${remove_button_cnt} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220702 09:40:21.504" level="INFO">${rev_button_index} = 0</msg>
+<status status="PASS" starttime="20220702 09:40:21.504" endtime="20220702 09:40:21.504"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${remove_text}</var>
+<arg>${remove_button}[${rev_button_index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:21.514" level="INFO">${remove_text} = REMOVE</msg>
+<status status="PASS" starttime="20220702 09:40:21.504" endtime="20220702 09:40:21.514"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${remove_text}" == "REMOVE"</arg>
+<arg>Log to console</arg>
+<arg>Status | Item Added to Cart</arg>
+<arg>ELSE</arg>
+<arg>Log to console</arg>
+<arg>Status | Item Not Added to Cart</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Status | Item Added to Cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:21.514" endtime="20220702 09:40:21.515"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:21.514" endtime="20220702 09:40:21.515"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:21.383" endtime="20220702 09:40:21.515"/>
+</kw>
+<kw name="Go to Cart" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Go to Cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:21.515" endtime="20220702 09:40:21.515"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=shopping_cart_container</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:21.515" level="INFO">Clicking element 'id=shopping_cart_container'.</msg>
+<status status="PASS" starttime="20220702 09:40:21.515" endtime="20220702 09:40:21.616"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 09:40:23.617" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 09:40:21.616" endtime="20220702 09:40:23.617"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Your Cart</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220702 09:40:23.640" level="INFO">Current page contains text 'Your Cart'.</msg>
+<status status="PASS" starttime="20220702 09:40:23.618" endtime="20220702 09:40:23.641"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:21.515" endtime="20220702 09:40:23.641"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:21.383" endtime="20220702 09:40:23.641"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:21.383" endtime="20220702 09:40:23.641"/>
+</kw>
+<kw name="And user will process checkout">
+<kw name="Cart Checking" library="2-checkout">
+<kw name="Product Checking" library="2-checkout">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Product Checking</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:23.642" endtime="20220702 09:40:23.642"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${cart_item_element}</var>
+<arg>class=cart_item</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220702 09:40:23.655" level="INFO">${cart_item_element} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="47cc2836add7bfcd1cdb22a0a8208177", element="c9104a29-033e-4642-9882-826474fd117f")&gt;]</msg>
+<status status="PASS" starttime="20220702 09:40:23.642" endtime="20220702 09:40:23.655"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${cart_item_count}</var>
+<arg>class=cart_item</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220702 09:40:23.662" level="INFO">${cart_item_count} = 1</msg>
+<status status="PASS" starttime="20220702 09:40:23.655" endtime="20220702 09:40:23.662"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Cart WebEl - ${cart_item_element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:23.662" endtime="20220702 09:40:23.662"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Cart Count - ${cart_item_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:23.662" endtime="20220702 09:40:23.663"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Random Number - ${random_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:23.663" endtime="20220702 09:40:23.663"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${product_num}</var>
+<arg>${random_number} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220702 09:40:23.663" level="INFO">${product_num} = 5</msg>
+<status status="PASS" starttime="20220702 09:40:23.663" endtime="20220702 09:40:23.663"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${product_num}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220702 09:40:23.663" level="INFO">${product_num} = 5</msg>
+<status status="PASS" starttime="20220702 09:40:23.663" endtime="20220702 09:40:23.663"/>
+</kw>
+<kw name="Load JSON From File" library="JSONLibrary">
+<var>${json_obj}</var>
+<arg>${EXECDIR}/data/product_${product_num}.json</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220702 09:40:23.665" level="INFO">${json_obj} = {'product_title': 'Sauce Labs Onesie', 'product_price': '$7.99', 'product_price_round': '8'}</msg>
+<status status="PASS" starttime="20220702 09:40:23.663" endtime="20220702 09:40:23.665"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\nOriginal JSON:\n${json_obj}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:23.665" endtime="20220702 09:40:23.665"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${json_obj}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220702 09:40:23.666" level="INFO">${json_obj} = {'product_title': 'Sauce Labs Onesie', 'product_price': '$7.99', 'product_price_round': '8'}</msg>
+<status status="PASS" starttime="20220702 09:40:23.666" endtime="20220702 09:40:23.666"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_file1}</var>
+<arg>${json_obj}</arg>
+<arg>$..product_title</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220702 09:40:23.695" level="INFO">${json_file1} = ['Sauce Labs Onesie']</msg>
+<status status="PASS" starttime="20220702 09:40:23.666" endtime="20220702 09:40:23.695"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${prdct_title}</var>
+<arg>${json_file1}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220702 09:40:23.695" level="INFO">${prdct_title} = ['Sauce Labs Onesie']</msg>
+<status status="PASS" starttime="20220702 09:40:23.695" endtime="20220702 09:40:23.695"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${prdct_title_str}</var>
+<arg>${prdct_title}</arg>
+<arg>[</arg>
+<arg>'</arg>
+<arg>]</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20220702 09:40:23.695" level="INFO">${prdct_title_str} = Sauce Labs Onesie</msg>
+<status status="PASS" starttime="20220702 09:40:23.695" endtime="20220702 09:40:23.695"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Product Title = ${prdct_title_str}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:23.695" endtime="20220702 09:40:23.695"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_file1}</var>
+<arg>${json_obj}</arg>
+<arg>$..product_price</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220702 09:40:23.708" level="INFO">${json_file1} = ['$7.99']</msg>
+<status status="PASS" starttime="20220702 09:40:23.696" endtime="20220702 09:40:23.708"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${prdct_price}</var>
+<arg>${json_file1}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220702 09:40:23.708" level="INFO">${prdct_price} = ['$7.99']</msg>
+<status status="PASS" starttime="20220702 09:40:23.708" endtime="20220702 09:40:23.708"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${prdct_price_str}</var>
+<arg>${prdct_price}</arg>
+<arg>[</arg>
+<arg>'</arg>
+<arg>]</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20220702 09:40:23.709" level="INFO">${prdct_price_str} = $7.99</msg>
+<status status="PASS" starttime="20220702 09:40:23.709" endtime="20220702 09:40:23.709"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Product Price = ${prdct_price_str}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:23.709" endtime="20220702 09:40:23.709"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>class=inventory_item_name</arg>
+<arg>${prdct_title_str}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220702 09:40:23.728" level="INFO">Element 'class=inventory_item_name' contains text 'Sauce Labs Onesie'.</msg>
+<status status="PASS" starttime="20220702 09:40:23.709" endtime="20220702 09:40:23.728"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>class=inventory_item_price</arg>
+<arg>${prdct_price_str}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220702 09:40:23.747" level="INFO">Element 'class=inventory_item_price' contains text '$7.99'.</msg>
+<status status="PASS" starttime="20220702 09:40:23.728" endtime="20220702 09:40:23.747"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:23.642" endtime="20220702 09:40:23.747"/>
+</kw>
+<kw name="Continue Checkout" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Continue Checkout</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:23.747" endtime="20220702 09:40:23.748"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="checkout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:23.748" level="INFO">Clicking element '//*[@id="checkout"]'.</msg>
+<status status="PASS" starttime="20220702 09:40:23.748" endtime="20220702 09:40:23.812"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 09:40:25.813" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 09:40:23.812" endtime="20220702 09:40:25.813"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Checkout: Your Information</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220702 09:40:25.831" level="INFO">Current page contains text 'Checkout: Your Information'.</msg>
+<status status="PASS" starttime="20220702 09:40:25.813" endtime="20220702 09:40:25.831"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:23.747" endtime="20220702 09:40:25.831"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:23.641" endtime="20220702 09:40:25.831"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:23.641" endtime="20220702 09:40:25.832"/>
+</kw>
+<kw name="Then user purchase will proceed">
+<kw name="Checkout Complete" library="3-purchase_history">
+<kw name="Checkout Customer Information" library="3-purchase_history">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Checkout Customer Information</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:25.832" endtime="20220702 09:40:25.833"/>
+</kw>
+<kw name="First Name Male" library="FakerLibrary">
+<var>${firstName}</var>
+<msg timestamp="20220702 09:40:25.833" level="INFO">${firstName} = Gabriel</msg>
+<status status="PASS" starttime="20220702 09:40:25.833" endtime="20220702 09:40:25.833"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="first-name"]</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:25.834" level="INFO">Typing text 'Gabriel' into text field '//*[@id="first-name"]'.</msg>
+<status status="PASS" starttime="20220702 09:40:25.833" endtime="20220702 09:40:26.310"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${lastName}</var>
+<msg timestamp="20220702 09:40:26.310" level="INFO">${lastName} = Tyler</msg>
+<status status="PASS" starttime="20220702 09:40:26.310" endtime="20220702 09:40:26.310"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="last-name"]</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:26.310" level="INFO">Typing text 'Tyler' into text field '//*[@id="last-name"]'.</msg>
+<status status="PASS" starttime="20220702 09:40:26.310" endtime="20220702 09:40:26.541"/>
+</kw>
+<kw name="Random Number" library="FakerLibrary">
+<var>${postcode}</var>
+<arg>4</arg>
+<doc>Generate a random integer according to the following rules:</doc>
+<msg timestamp="20220702 09:40:26.543" level="INFO">${postcode} = 3444</msg>
+<status status="PASS" starttime="20220702 09:40:26.541" endtime="20220702 09:40:26.543"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=postal-code</arg>
+<arg>${postcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:26.543" level="INFO">Typing text '3444' into text field 'id=postal-code'.</msg>
+<status status="PASS" starttime="20220702 09:40:26.543" endtime="20220702 09:40:26.626"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=continue</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:26.627" level="INFO">Clicking element 'id=continue'.</msg>
+<status status="PASS" starttime="20220702 09:40:26.627" endtime="20220702 09:40:26.833"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 09:40:28.836" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 09:40:26.833" endtime="20220702 09:40:28.836"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Checkout: Overview</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220702 09:40:28.836" endtime="20220702 09:40:28.859"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:25.832" endtime="20220702 09:40:28.860"/>
+</kw>
+<kw name="Check Checkout Overview" library="3-purchase_history">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Check Checkout Overview | Calculation</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:28.860" endtime="20220702 09:40:28.860"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Random Number = ${product_num}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:28.860" endtime="20220702 09:40:28.860"/>
+</kw>
+<kw name="Load JSON From File" library="JSONLibrary">
+<var>${json_obj}</var>
+<arg>${EXECDIR}/data/product_${product_num}.json</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220702 09:40:28.860" level="INFO">${json_obj} = {'product_title': 'Sauce Labs Onesie', 'product_price': '$7.99', 'product_price_round': '8'}</msg>
+<status status="PASS" starttime="20220702 09:40:28.860" endtime="20220702 09:40:28.860"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\nOriginal JSON:\n${json_obj}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:28.860" endtime="20220702 09:40:28.861"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${json_obj}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220702 09:40:28.861" level="INFO">${json_obj} = {'product_title': 'Sauce Labs Onesie', 'product_price': '$7.99', 'product_price_round': '8'}</msg>
+<status status="PASS" starttime="20220702 09:40:28.861" endtime="20220702 09:40:28.861"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_file1}</var>
+<arg>${json_obj}</arg>
+<arg>$..product_price_round</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220702 09:40:28.871" level="INFO">${json_file1} = ['8']</msg>
+<status status="PASS" starttime="20220702 09:40:28.861" endtime="20220702 09:40:28.871"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${price}</var>
+<arg>${json_file1}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220702 09:40:28.872" level="INFO">${price} = ['8']</msg>
+<status status="PASS" starttime="20220702 09:40:28.871" endtime="20220702 09:40:28.872"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${price_str}</var>
+<arg>${price}</arg>
+<arg>[</arg>
+<arg>'</arg>
+<arg>]</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20220702 09:40:28.872" level="INFO">${price_str} = 8</msg>
+<status status="PASS" starttime="20220702 09:40:28.872" endtime="20220702 09:40:28.872"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Product Title = ${price_str}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:28.872" endtime="20220702 09:40:28.872"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_file1}</var>
+<arg>${json_obj}</arg>
+<arg>$..product_price</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220702 09:40:28.882" level="INFO">${json_file1} = ['$7.99']</msg>
+<status status="PASS" starttime="20220702 09:40:28.872" endtime="20220702 09:40:28.882"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${price_org}</var>
+<arg>${json_file1}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220702 09:40:28.883" level="INFO">${price_org} = ['$7.99']</msg>
+<status status="PASS" starttime="20220702 09:40:28.882" endtime="20220702 09:40:28.883"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${price_org_str}</var>
+<arg>${price_org}</arg>
+<arg>[</arg>
+<arg>'</arg>
+<arg>]</arg>
+<arg>$</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20220702 09:40:28.883" level="INFO">${price_org_str} = 7.99</msg>
+<status status="PASS" starttime="20220702 09:40:28.883" endtime="20220702 09:40:28.883"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Product Title = ${price_org_str}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:28.883" endtime="20220702 09:40:28.883"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${tax}</var>
+<arg>${price_str} * 0.08</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220702 09:40:28.883" level="INFO">${tax} = 0.64</msg>
+<status status="PASS" starttime="20220702 09:40:28.883" endtime="20220702 09:40:28.883"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${tax}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:28.883" endtime="20220702 09:40:28.883"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${cal_tax}</var>
+<arg>Tax: $${tax}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220702 09:40:28.883" level="INFO">${cal_tax} = Tax: $0.64</msg>
+<status status="PASS" starttime="20220702 09:40:28.883" endtime="20220702 09:40:28.883"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${total}</var>
+<arg>${price_org_str} + ${tax}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220702 09:40:28.884" level="INFO">${total} = 8.63</msg>
+<status status="PASS" starttime="20220702 09:40:28.883" endtime="20220702 09:40:28.884"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${total}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:28.884" endtime="20220702 09:40:28.884"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${cal_total}</var>
+<arg>Total: $${total}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220702 09:40:28.884" level="INFO">${cal_total} = Total: $8.63</msg>
+<status status="PASS" starttime="20220702 09:40:28.884" endtime="20220702 09:40:28.884"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>class=summary_tax_label</arg>
+<arg>${cal_tax}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220702 09:40:28.909" level="INFO">Element 'class=summary_tax_label' contains text 'Tax: $0.64'.</msg>
+<status status="PASS" starttime="20220702 09:40:28.884" endtime="20220702 09:40:28.909"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>class=summary_total_label</arg>
+<arg>${cal_total}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220702 09:40:28.944" level="INFO">Element 'class=summary_total_label' contains text 'Total: $8.63'.</msg>
+<status status="PASS" starttime="20220702 09:40:28.909" endtime="20220702 09:40:28.944"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Calculation Validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:28.944" endtime="20220702 09:40:28.944"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:28.860" endtime="20220702 09:40:28.944"/>
+</kw>
+<kw name="Finish Checkout" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Finish Checkout</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220702 09:40:28.944" endtime="20220702 09:40:28.945"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=finish</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220702 09:40:28.945" level="INFO">Clicking element 'id=finish'.</msg>
+<status status="PASS" starttime="20220702 09:40:28.945" endtime="20220702 09:40:29.863"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220702 09:40:31.868" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220702 09:40:29.864" endtime="20220702 09:40:31.870"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>THANK YOU FOR YOUR ORDER</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220702 09:40:31.911" level="INFO">Current page contains text 'THANK YOU FOR YOUR ORDER'.</msg>
+<status status="PASS" starttime="20220702 09:40:31.871" endtime="20220702 09:40:31.911"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:28.944" endtime="20220702 09:40:31.911"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:25.832" endtime="20220702 09:40:31.911"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:25.832" endtime="20220702 09:40:31.911"/>
+</kw>
+<status status="PASS" starttime="20220702 09:40:07.874" endtime="20220702 09:40:31.911"/>
+</test>
+<doc>Common - SwagLabs</doc>
+<status status="PASS" starttime="20220702 09:40:07.660" endtime="20220702 09:40:31.912"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Checkout">Checkout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
